@@ -11,7 +11,7 @@ import Foundation
 struct APIConstants {
     
     struct Main {
-        static let APIUrl = ""
+        static let APIUrl = "https://www.reddit.com/.json"
     }
     
     struct Items {

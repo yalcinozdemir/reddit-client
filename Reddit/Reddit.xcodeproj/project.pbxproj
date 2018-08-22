@@ -8,26 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		AF602573212DF307001A3AF4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602572212DF307001A3AF4 /* AppDelegate.swift */; };
-		AF602575212DF307001A3AF4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602574212DF307001A3AF4 /* ViewController.swift */; };
-		AF602578212DF307001A3AF4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF602576212DF307001A3AF4 /* Main.storyboard */; };
+		AF602575212DF307001A3AF4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602574212DF307001A3AF4 /* MainViewController.swift */; };
 		AF60257A212DF309001A3AF4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF602579212DF309001A3AF4 /* Assets.xcassets */; };
 		AF60257D212DF309001A3AF4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF60257B212DF309001A3AF4 /* LaunchScreen.storyboard */; };
 		AF602586212DF420001A3AF4 /* HomeAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602585212DF420001A3AF4 /* HomeAPI.swift */; };
 		AF602589212DF5B9001A3AF4 /* Listing.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602588212DF5B9001A3AF4 /* Listing.swift */; };
 		AF60258C212DFFB3001A3AF4 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF60258B212DFFB3001A3AF4 /* APIConstants.swift */; };
+		AF602590212E044D001A3AF4 /* ListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF60258F212E044D001A3AF4 /* ListingTableViewCell.swift */; };
+		AF602592212E0A6B001A3AF4 /* UIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF602591212E0A6B001A3AF4 /* UIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF60256F212DF307001A3AF4 /* Reddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF602572212DF307001A3AF4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF602574212DF307001A3AF4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AF602577212DF307001A3AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF602574212DF307001A3AF4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		AF602579212DF309001A3AF4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF60257C212DF309001A3AF4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF60257E212DF309001A3AF4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF602585212DF420001A3AF4 /* HomeAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAPI.swift; sourceTree = "<group>"; };
 		AF602588212DF5B9001A3AF4 /* Listing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listing.swift; sourceTree = "<group>"; };
 		AF60258B212DFFB3001A3AF4 /* APIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		AF60258F212E044D001A3AF4 /* ListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingTableViewCell.swift; sourceTree = "<group>"; };
+		AF602591212E0A6B001A3AF4 /* UIConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,12 @@
 		AF602571212DF307001A3AF4 /* Reddit */ = {
 			isa = PBXGroup;
 			children = (
+				AF60258E212E0439001A3AF4 /* View */,
 				AF60258A212DFFA9001A3AF4 /* Constants */,
 				AF602587212DF565001A3AF4 /* Model */,
 				AF602584212DF403001A3AF4 /* API */,
 				AF602572212DF307001A3AF4 /* AppDelegate.swift */,
-				AF602574212DF307001A3AF4 /* ViewController.swift */,
-				AF602576212DF307001A3AF4 /* Main.storyboard */,
+				AF602574212DF307001A3AF4 /* MainViewController.swift */,
 				AF602579212DF309001A3AF4 /* Assets.xcassets */,
 				AF60257B212DF309001A3AF4 /* LaunchScreen.storyboard */,
 				AF60257E212DF309001A3AF4 /* Info.plist */,
@@ -93,8 +95,17 @@
 			isa = PBXGroup;
 			children = (
 				AF60258B212DFFB3001A3AF4 /* APIConstants.swift */,
+				AF602591212E0A6B001A3AF4 /* UIConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		AF60258E212E0439001A3AF4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF60258F212E044D001A3AF4 /* ListingTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +168,6 @@
 			files = (
 				AF60257D212DF309001A3AF4 /* LaunchScreen.storyboard in Resources */,
 				AF60257A212DF309001A3AF4 /* Assets.xcassets in Resources */,
-				AF602578212DF307001A3AF4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,8 +178,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF602575212DF307001A3AF4 /* ViewController.swift in Sources */,
+				AF602590212E044D001A3AF4 /* ListingTableViewCell.swift in Sources */,
+				AF602575212DF307001A3AF4 /* MainViewController.swift in Sources */,
 				AF60258C212DFFB3001A3AF4 /* APIConstants.swift in Sources */,
+				AF602592212E0A6B001A3AF4 /* UIConstants.swift in Sources */,
 				AF602586212DF420001A3AF4 /* HomeAPI.swift in Sources */,
 				AF602573212DF307001A3AF4 /* AppDelegate.swift in Sources */,
 				AF602589212DF5B9001A3AF4 /* Listing.swift in Sources */,
@@ -179,14 +191,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AF602576212DF307001A3AF4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AF602577212DF307001A3AF4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AF60257B212DF309001A3AF4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

@@ -12,8 +12,8 @@ class HomeAPI {
     
     static let sharedInstance = HomeAPI()
     
-    func retrievePosts(completion: @escaping (_ posts: [Listing]) -> Void) {
-        var posts = [Listing]()
+    func retrieveListings(completion: @escaping (_ listings: [Listing]) -> Void) {
+        var listings = [Listing]()
         let url = URL(string: APIConstants.Main.APIUrl)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
             guard let dataResponse = data,
@@ -31,10 +31,10 @@ class HomeAPI {
                     guard let data = child[APIConstants.Items.Data] as? [String: Any] else {
                         return
                     }
-                    let post = Listing(data: data)
-                    posts.append(post)
+                    let listing = Listing(data: data)
+                    listings.append(listing)
                 }
-                completion(posts)
+                completion(listings)
             } catch let parsingError {
                 print(APIConstants.Error.ParsingError, parsingError)
             }

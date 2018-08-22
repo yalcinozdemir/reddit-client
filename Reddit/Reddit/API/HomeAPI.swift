@@ -12,11 +12,31 @@ class HomeAPI {
     
     static let sharedInstance = HomeAPI()
     
-    func retrievePosts() {
-        let url = URL(string: "https://www.reddit.com/.json")
+    func retrievePosts(completion: @escaping (_ posts: [Listing]) -> Void) {
+        var posts = [Listing]()
+        let url = URL(string: APIConstants.Main.APIUrl)
         let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
-            if data != nil {
-                print(data)
+            guard let dataResponse = data,
+                error == nil else {
+                    print(error?.localizedDescription ?? APIConstants.Error.GeneralError)
+                    return }
+            do{
+                let jsonResponse = try JSONSerialization.jsonObject(with:
+                    dataResponse, options: [])
+                guard let jsonArray = jsonResponse as? [String: Any], let data = jsonArray[APIConstants.Items.Data] as? [String: Any], let children = data[APIConstants.Items.Children] as? [[String: Any]] else {
+                    print(APIConstants.Error.GeneralError)
+                    return
+                }
+                for child in children {
+                    guard let data = child[APIConstants.Items.Data] as? [String: Any] else {
+                        return
+                    }
+                    let post = Listing(data: data)
+                    posts.append(post)
+                }
+                completion(posts)
+            } catch let parsingError {
+                print(APIConstants.Error.ParsingError, parsingError)
             }
         }
         task.resume()

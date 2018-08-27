@@ -1,2 +1,2 @@
 # reddit-client
-Simple Reddit Client Using in Swift
+Simple Reddit Client Written in Swift
